@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nawell DJEFFAL - Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body { font-family: 'Segoe UI', sans-serif; background:#f8f9fa; }
+.container { max-width:900px; }
+.folder, .file { cursor:pointer; padding:8px 12px; border-radius:5px; margin:4px 0; background:#fff; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1); transition:0.2s; }
+.folder:hover, .file:hover { background:#e9ecef; }
+.folder i, .file i { margin-right:8px; color:#6a11cb; }
+.folder-children { display:none; margin-left:20px; }
+.file-actions button { margin-left:5px; font-size:0.8rem; padding:2px 6px; }
+</style>
+</head>
+<body>
+
+<div class="container py-5">
+  <h1 class="text-center mb-4">Nawell DJEFFAL - Portfolio</h1>
+
+  <!-- Dossier À propos -->
+  <div class="folder" onclick="toggleFolder('about')"><i class="fas fa-folder"></i> À propos</div>
+  <div class="folder-children" id="about">
+    <p>Je suis une personne sociable, très souriante et j'aime apprendre de nouvelles compétences. Étudiante en BTS SIO, passionnée par l'informatique et le travail d'équipe.</p>
+  </div>
+
+  <!-- Dossier Compétences -->
+  <div class="folder" onclick="toggleFolder('skills')"><i class="fas fa-folder"></i> Compétences</div>
+  <div class="folder-children" id="skills">
+    <p>Accueil physique : 90%</p>
+    <div class="progress mb-2"><div class="progress-bar" style="width:90%">90%</div></div>
+    <p>Accueil téléphonique : 85%</p>
+    <div class="progress mb-2"><div class="progress-bar" style="width:85%">85%</div></div>
+    <p>Gestion administrative : 80%</p>
+    <div class="progress mb-2"><div class="progress-bar" style="width:80%">80%</div></div>
+    <p>Pack Office : 75%</p>
+    <div class="progress mb-2"><div class="progress-bar" style="width:75%">75%</div></div>
+    <p>VSCode : 70%</p>
+    <div class="progress mb-2"><div class="progress-bar" style="width:70%">70%</div></div>
+    <p>Travail d'équipe : 95%</p>
+    <div class="progress mb-2"><div class="progress-bar" style="width:95%">95%</div></div>
+  </div>
+
+  <!-- Dossier Parcours -->
+  <div class="folder" onclick="toggleFolder('education')"><i class="fas fa-folder"></i> Parcours</div>
+  <div class="folder-children" id="education">
+    <ul>
+      <li>BTS SP3S (2022-2024) - Lycée Sévigné Gap</li>
+      <li>Baccalauréat Gestion Administration (2019-2021) - Mention Bien</li>
+      <li>DNB (2015-2019) - Mention Assez Bien</li>
+      <li>CFG (2019) - Collège Fontreyne Gap</li>
+    </ul>
+  </div>
+
+  <!-- Dossier Expérience -->
+  <div class="folder" onclick="toggleFolder('experience')"><i class="fas fa-folder"></i> Expérience</div>
+  <div class="folder-children" id="experience">
+    <ul>
+      <li>Amicial - Gap (2023-2024) - Stage secrétariat</li>
+      <li>Sécurité sociale - Gap (Sept 2023) - Stage secrétariat</li>
+      <li>Lycée Paul Hérault - Gap (2022) - Stage assistante administrative</li>
+      <li>Centre des impôts - Gap (2020) - Stage assistante administrative</li>
+    </ul>
+  </div>
+
+  <!-- Dossier Projets -->
+  <div class="folder" onclick="toggleFolder('projects')"><i class="fas fa-folder"></i> Projets</div>
+  <div class="folder-children" id="projects">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card shadow"><img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa" class="card-img-top"><div class="card-body"><h5>Gestion Administrative</h5><p>Classement de dossiers et gestion administrative.</p></div></div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow"><img src="https://images.unsplash.com/photo-1588200908342-23b585c03e26" class="card-img-top"><div class="card-body"><h5>Accueil et Relation Client</h5><p>Développement de compétences en accueil physique et téléphonique.</p></div></div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" class="card-img-top"><div class="card-body"><h5>Développement Informatique</h5><p>Utilisation de VSCode et compétences numériques.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dossier Mes fichiers -->
+  <div class="folder" onclick="toggleFolder('files')"><i class="fas fa-folder"></i> Mes fichiers</div>
+  <div class="folder-children" id="files"></div>
+
+  <!-- Dossier Mon CV -->
+  <div class="folder" onclick="toggleFolder('cv')"><i class="fas fa-folder"></i> Mon CV</div>
+  <div class="folder-children" id="cv">
+    <embed src="CV_Nawell_DJEFFAL.pdf" type="application/pdf" width="100%" height="500px">
+    <div class="mt-2">
+      <a href="CV_Nawell_DJEFFAL.pdf" target="_blank" class="btn btn-primary me-2"><i class="fas fa-eye me-1"></i>Voir</a>
+      <a href="CV_Nawell_DJEFFAL.pdf" download class="btn btn-success"><i class="fas fa-download me-1"></i>Télécharger</a>
+    </div>
+  </div>
+
+  <!-- Dossier Contact -->
+  <div class="folder" onclick="toggleFolder('contact')"><i class="fas fa-folder"></i> Contact</div>
+  <div class="folder-children" id="contact">
+    <form id="contactForm">
+      <div class="mb-2"><label>Nom</label><input type="text" class="form-control" required></div>
+      <div class="mb-2"><label>Email</label><input type="email" class="form-control" required></div>
+      <div class="mb-2"><label>Message</label><textarea class="form-control" rows="4" required></textarea></div>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+    <p class="mt-2"><i class="fas fa-envelope"></i> djeffalnawellbts@gmail.com<br>
+       <i class="fas fa-phone"></i> +33 6 66 21 32 79<br>
+       <i class="fas fa-map-marker-alt"></i> Gap, France</p>
+  </div>
+
+</div>
+
+<footer class="text-center py-4 bg-dark text-white mt-4">&copy; 2024 Nawell DJEFFAL - Tous droits réservés.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function toggleFolder(id){
+  const el=document.getElementById(id);
+  el.style.display=(el.style.display==='none')?'block':'none';
+}
+
+const availableFiles=[
+  {name:"CV_Nawell_DJEFFAL.pdf",size:"1.2 MB",url:"CV_Nawell_DJEFFAL.pdf",desc:"Mon CV"},
+  {name:"Lettre_Motivation.pdf",size:"0.8 MB",url:"#",desc:"Lettre de motivation"},
+  {name:"Projet_BTS_SIO.pdf",size:"2.5 MB",url:"#",desc:"Projet BTS SIO"}
+];
+
+function renderFiles(){
+  const fileList=document.getElementById('files');
+  fileList.innerHTML='';
+  availableFiles.forEach(f=>{
+    const html=`<div class="file">
+      <div><i class="fas ${getFileIcon(f.name)}"></i>${f.name}<br><small>${f.desc}</small></div>
+      <div>
+        <button class="btn btn-sm btn-outline-primary btn-small" onclick="window.open('${f.url}','_blank')"><i class="fas fa-eye me-1"></i>Voir</button>
+        <button class="btn btn-sm btn-outline-success btn-small" onclick="downloadFile('${f.url}','${f.name}')"><i class="fas fa-download me-1"></i>Télécharger</button>
+      </div>
+    </div>`;
+    fileList.insertAdjacentHTML('beforeend',html);
+  });
+}
+function getFileIcon(name){const ext=name.split('.').pop(); const map={'pdf':'fa-file-pdf','doc':'fa-file-word','docx':'fa-file-word','xls':'fa-file-excel','xlsx':'fa-file-excel','ppt':'fa-file-powerpoint','pptx':'fa-file-powerpoint','txt':'fa-file-alt'}; return map[ext]||'fa-file';}
+function downloadFile(url,name){if(url==="#"){alert("Lien non défini."); return;} const a=document.createElement('a'); a.href=url; a.download=name; document.body.appendChild(a); a.click(); document.body.removeChild(a);}
+document.addEventListener('DOMContentLoaded',renderFiles);
+
+document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault(); alert('Message envoyé !'); this.reset();});
+</script>
+</body>
+</html>
